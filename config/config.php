@@ -11,14 +11,14 @@ define("USER_STORAGE", 'COOKIE');
 define("WECHAT_VENDOR", 'curio'); // default | curio
 
 //Wechat config info
-define("TOKEN", '?????');
+define("TOKEN", 'zcBpBLWyAFy6xs3e7HeMPL9zWrd7Xy');
 define("APPID", '?????');
 define("APPSECRET", '?????');
 define("NOWTIME", date('Y-m-d H:i:s'));
 define("AHEADTIME", '100');
 
-define("NONCESTR", '?????');
-define("CURIO_AUTH_URL", '?????'); 
+define("NONCESTR", 'fuqwfuiwq');
+define("CURIO_AUTH_URL", 'http://coach.samesamechina.com/api/wechat/oauth/auth/c0c4c00a-abda-4790-9f74-e97fbfce83d3'); 
 
 //Redis config info
 define("REDIS_HOST", '127.0.0.1');

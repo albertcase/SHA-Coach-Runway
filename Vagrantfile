@@ -3,16 +3,19 @@
 
 Vagrant.configure("2") do |config|
  
-  config.vm.box = "ubuntu14.04-20150827"
-  config.vm.hostname = "sha-coach-mgm"
+  config.vm.box = "ubuntu16.04-20170208"
+  config.vm.hostname = "ubuntu16.04"
 
-  config.vm.network :forwarded_port, guest: 80, host: 9229
-  config.vm.network :forwarded_port, guest: 3306, host: 33229
+  
+  config.vm.network :forwarded_port, guest: 80, host: 9227
+  config.vm.network :forwarded_port, guest: 3306, host: 33001
+  config.vm.network :forwarded_port, guest: 6379, host: 63791
+  config.vm.network :forwarded_port, guest: 27017, host: 37017
+
+  
   config.vm.network :private_network, ip: "192.168.33.10"
 
-  config.vm.synced_folder "./", "/vagrant", :nfs => true
-  #config.vm.synced_folder "./", "/vagrant"
-
+  config.vm.synced_folder "./", "/vagrant", :nfs => true 
 
   config.vm.provider :virtualbox do |vb|
   #   # Don't boot with headless mode
