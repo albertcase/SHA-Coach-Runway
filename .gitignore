@@ -5,9 +5,9 @@ puppet/
 node_modules/
 config/
 .zip
-build/
+# build
 package.json
-#build/src/
-#build/gulpfile.js
-
+build/src/
+build/gulpfile.js
+build/test.mp4
 
