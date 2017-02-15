@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Coach</title>
+    <title>COACH2017秋冬时装周</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="format-detection" content="telephone=no">
     <!-- uc强制竖屏 -->
@@ -69,7 +69,7 @@
         <dl>
             <dd>
                 <div class="poster"></div>
-                <video width="100%" height="100%" id="show" x-webkit-airplay="true" preload playsinline webkit-playsinline src="/build/test.mp4"></video>
+                <video width="100%" height="100%" id="show" x-webkit-airplay="true" preload playsinline webkit-playsinline src="/build/assets/video/test.mp4"></video>
 
                 <!-- <a class="alink" href="javascript:void(0);">
                     <img src="/build/assets/img/add.png?v=7584e93861" width="100%">
@@ -304,7 +304,17 @@
         setTimeout(function(){
             $(".proPop").stop().animate({"left": "100%", "opacity": 0}, 100).html("");
         }, 6700)
+
     }
+
+    $(".proPop").delegate(".proPop_con", "click", function(){
+        var currentNum = $(this).attr("data-id");
+        console.log(currentNum);
+        //swiper2.slideTo(currentNum, 1000, false);
+        proInfoPopFun(currentNum);
+        showId.pause();
+    })
+
 
     
 
@@ -354,13 +364,6 @@
         $(".proInfoPop_con").html(pinfoHTML);        
         $(".proInfoPop").show().css({"visibility": "visible"});
     }
-
-    $(".proPop_con").on("click", function(){
-        var currentNum = $(this).attr("data-id");
-        //swiper2.slideTo(currentNum, 1000, false);
-        proInfoPopFun(currentNum);
-        showId.pause();
-    })
 
 
     $(".pclose").on("click", function(){
