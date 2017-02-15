@@ -61,7 +61,7 @@
 
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
-        //pfun.init();
+        pfun.init();
     })
 </script>
 
