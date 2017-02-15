@@ -18,7 +18,7 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="...">
     <link rel="stylesheet" type="text/css" href="/build/assets/css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="/build/assets/css/main.min.css?v=0dae0feb9d">
+    <link rel="stylesheet" type="text/css" href="/build/assets/css/main.min.css?v=1fedb279f3">
     <style type="text/css">
         #orientLayer { display: block; }
         @media screen and (min-aspect-ratio: 13/9) { 
@@ -303,7 +303,7 @@
 
         setTimeout(function(){
             $(".proPop").stop().animate({"left": "100%", "opacity": 0}, 100).html("");
-        }, 2700)
+        }, 5700)
 
     }
 
@@ -319,24 +319,25 @@
     
 
     pfun.eventTester(showId, "timeupdate", function(e){
+        console.log(showId.currentTime);
         if(timeArr.indexOf(parseInt(showId.currentTime)) < 0){
-            if(parseInt(showId.currentTime) == 3){
+            if(parseInt(showId.currentTime) == 6){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(1);
                 //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 9){
+            }else if(parseInt(showId.currentTime) == 17){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(2);
                 //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 15){
+            }else if(parseInt(showId.currentTime) == 30){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(3);
                 //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 20){
+            }else if(parseInt(showId.currentTime) == 40){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(4);
                 //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 24){
+            }else if(parseInt(showId.currentTime) == 50){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(5);
                 //console.log(timeArr);
@@ -500,12 +501,10 @@
 
     // arr pos change
     function arrPos(a){
-        var b = [];
-        for(var i = 5; i > 0; i--){
+        var b = a;
+        for(var i = 1; i <= 5; i++){
             if(a.indexOf(i+"") < 0){
                 b.push(i+"");
-            }else{
-                b.unshift(i+"");
             }
         }
         return b;

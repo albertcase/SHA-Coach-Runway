@@ -922,6 +922,16 @@ input[name=send] {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;*/ }
 
+#chatArea * {
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
 /* 6plus */
 /* 6 */
 /* 5s */
