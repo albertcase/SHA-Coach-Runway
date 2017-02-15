@@ -18,7 +18,7 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="...">
     <link rel="stylesheet" type="text/css" href="/build/assets/css/main.min.css?v=aad245b242">
-    <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/75058010-0fe1-476a-88f8-f96ffab561c8/wechat"></script>
+    <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/75058010-0fe1-476a-88f8-f96ffab561c8/wechat?debug=true"></script>
 
 </head>
 <body>
