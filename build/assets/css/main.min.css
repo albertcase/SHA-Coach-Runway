@@ -765,9 +765,10 @@ input[name=send] {
 
 .swiper-container {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
 
-.swiper-slide {
+#swiper-1 .swiper-slide, #swiper-2 .swiper-slide {
   position: relative;
   text-align: center;
   /* Center slide text vertically */
@@ -784,15 +785,18 @@ input[name=send] {
   -webkit-align-items: center;
   align-items: center; }
 
+#swiper-3 .swiper-slide {
+  height: 100%; }
+
 .proHotArea {
   width: 24%;
   position: absolute;
   right: 12%;
-  bottom: 16%;
+  bottom: 25%;
   z-index: 2; }
 
 .price {
-  padding: 0 0 6px 0;
+  padding: 0 0 9px 0;
   width: 100%;
   display: inline-block;
   color: #e6727f; }
@@ -824,7 +828,8 @@ input[name=send] {
   position: absolute;
   left: 20%;
   bottom: 10%;
-  z-index: 2; }
+  z-index: 2;
+  color: #fff; }
 
 .proIntroArea {
   width: 100%;

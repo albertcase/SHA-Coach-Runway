@@ -267,8 +267,8 @@
         "/build/assets/img/green.png?v=25f945040c",
         "/build/assets/img/pink.png?v=dbb3cb8037",
     ];
-
-    var showId = document.getElementById("show"), timeArr = [], wishArr = pfun.getCookie("wish").split(',');
+    var wishcookie = pfun.getCookie("wish");
+    var showId = document.getElementById("show"), timeArr = [], wishArr = !wishcookie ? [] : (wishcookie.split(','));
 
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
