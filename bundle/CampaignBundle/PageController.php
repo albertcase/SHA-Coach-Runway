@@ -5,10 +5,8 @@ use Core\Controller;
 
 class PageController extends Controller {
 
-	public function indexAction() {
-		$RedisAPI = new \Lib\RedisAPI();
-		$config = $RedisAPI->jssdkConfig($this->request->getUrl(TRUE));
-		$this->render('index', array('config' => $config));
+	public function teasingAction() {
+		$this->render('teasing');
 	}
 
 	public function clearCookieAction() {
