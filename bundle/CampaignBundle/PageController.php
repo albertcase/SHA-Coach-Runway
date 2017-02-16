@@ -36,7 +36,7 @@ class PageController extends Controller {
 		foreach ($marks as $key => $value) {
 			$list[$value['pid']] = $value['num'];
 		}
-		$this->statusPrint($list);
+		$this->dataPrint(array("status"=>1, "msg"=>$list));
 	}
 
 	public function sendAction() {
