@@ -10,4 +10,5 @@ build/src/
 build/gulpfile.js
 build/test.mp4
 build/assets/video/test.mp4
-
+.sql
+other/
