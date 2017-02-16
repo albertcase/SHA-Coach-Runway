@@ -12,13 +12,16 @@
         "/build/assets/img/orange.png",
         "/build/assets/img/green.png",
         "/build/assets/img/pink.png",
+        "/build/assets/video/c.mp4",
     ];
+
     var wishcookie = pfun.getCookie("wish");
     var showId = document.getElementById("show"), timeArr = [], wishArr = !wishcookie ? [] : (wishcookie.split(',')),
         porinfoArr = {
-            "price": ["RMB4,950", "RMB4,950", "RMB4,950", "RMB3,950", "RMB3,950"],
-            "num": ["123", "356", "789", "908", "367"],
+            "price": ["", "RMB4,950", "RMB4,950", "RMB4,950", "RMB3,950", "RMB3,950"],
+            "num": ["", "123", "356", "789", "908", "367"],
             "link": [
+                "", 
                 "http://china.coach.com/product/21052_BPF8Q/detail.htm?collection=buynow",
                 "http://china.coach.com/product/21053_BPBLK/detail.htm?collection=buynow",
                 "http://china.coach.com/product/21050_BPCHK/detail.htm?collection=buynow",
@@ -125,22 +128,25 @@
     // '<a href="javascript:void(0);" class="mlink">' +
     //                         '<img src="/build/assets/img/mlink.png" width="100%">' +
     //                     '</a>' +
+    var setTime;
     function propopFun(n){
-        var popHTML = '<div class="proPop_con" data-id="'+ n +'">' +
+        clearTimeout(setTime);
+        var popHTML = '<div class="proPop_con fadeInUp animated" data-id="'+ n +'">' +
                         '<img src="/build/assets/img/pro/'+ n +'/pw.jpg" width="100%">' +
                     '</div>';
-        $(".proPop").html(popHTML).css({"visibility": "visible"}).stop().animate({"opacity": 1}, 600);
+        $(".proPop").html(popHTML).fadeIn();
         
 
-        setTimeout(function(){
-            $(".proPop").stop().animate({"opacity": 0}, 100).html("").css({"visibility": "hidden"});
-        }, 5700)
+        setTime = setTimeout(function(){
+            $(".proPop_con").removeClass("fadeInUp animated");
+            $(".proPop").fadeOut().html("");
+        }, 6000)
 
     }
 
     $(".proPop").delegate(".proPop_con", "click", function(){
         var currentNum = $(this).attr("data-id");
-        console.log(currentNum);
+        //console.log(currentNum);
         //swiper2.slideTo(currentNum, 1000, false);
         proInfoPopFun(currentNum);
         showId.pause();
@@ -150,33 +156,33 @@
     
 
     pfun.eventTester(showId, "timeupdate", function(e){
-        //console.log(showId.currentTime);
+        console.log(showId.currentTime);
         if(timeArr.indexOf(parseInt(showId.currentTime)) < 0){
             if(parseInt(showId.currentTime) == 13){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(4);
-                console.log(timeArr);
+                //console.log(timeArr);
             }else if(parseInt(showId.currentTime) == 30){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(5);
-                console.log(timeArr);
+                //console.log(timeArr);
             }else if(parseInt(showId.currentTime) == 83){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(1);
-                console.log(timeArr);
+                //console.log(timeArr);
             }else if(parseInt(showId.currentTime) == 105){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(3);
-                console.log(timeArr);
+                //console.log(timeArr);
             }else if(parseInt(showId.currentTime) == 136){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(2);
-                console.log(timeArr);
+                //console.log(timeArr);
             }else {
 
             }
         }
-        console.log(parseInt(showId.currentTime))   
+        //console.log(parseInt(showId.currentTime))   
     });
 
     $(".poster").on("touchstart", function(){
@@ -294,6 +300,12 @@
         pfun.setCookie("wish", wishArr.toString(), "360");
         console.log(wishArr);
 
+        // 提交心愿单结果
+        //console.log((wishArr.join(',')));
+        if(wishArr.length > 0){
+            pfun.ajaxFun("POST", "/api/mark", {"mark": (wishArr.join(','))}, "json", markCallback);
+        }
+        
         var prolistArr = arrPos(wishArr);
         console.log(prolistArr);
 
@@ -302,10 +314,10 @@
             return '<div class="swiper-slide">' +
                         '<img src="/build/assets/img/pro/1/l.jpg" width="100%">' +
                         '<div class="proHotArea">' +
-                            '<p>收藏人数: '+ porinfoArr.num[k] +'</p>' +
-                            '<p class="price">'+ porinfoArr.price[k] +'</p>' +
+                            '<p>收藏人数: '+ porinfoArr.num[v] +'</p>' +
+                            '<p class="price">'+ porinfoArr.price[v] +'</p>' +
                             '<div class="phabtnArea">' +
-                                '<a href="'+ porinfoArr.link[k] +'" class="addCart">' +
+                                '<a href="'+ porinfoArr.link[v] +'" target="_blank" class="addCart">' +
                                     '<img src="/build/assets/img/addCart.jpg" width="100%">' +
                                 '</a>' +
                                 '<a href="/" class="replay">' +
@@ -324,6 +336,8 @@
             prevButton: '#swiper-3 .swiper-button-prev',
             spaceBetween: 30
         });
+
+
     }
     pfun.eventTester(showId, "ended", function(e){
         prolistFunCreate();
@@ -355,5 +369,15 @@
     // alert(pfun.getCookie("coachIsShare") + "set");
     // pfun.delCookie("coachIsShare");
     // console.log(pfun.getCookie("coachIsShare") + "del");
+
+
+
+
+
+    
+
+    function markCallback(data){
+        console.log(data);
+    }  
 
 </script></body></html>
