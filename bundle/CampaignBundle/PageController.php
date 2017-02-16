@@ -23,7 +23,7 @@ class PageController extends Controller {
 		$mark = $request->request->get('mark');
 		$marks = explode(",", $mark);
 		$DatabaseAPI = new \Lib\DatabaseAPI();
-		for ($i = 0; $i <= count($marks); $i++ ) {
+		for ($i = 0; $i < count($marks); $i++ ) {
 			$DatabaseAPI->saveMark($marks[$i]);
 		}
 		$this->statusPrint('success');
