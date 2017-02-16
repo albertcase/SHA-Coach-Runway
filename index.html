@@ -262,20 +262,14 @@
         
         $(".proInfoPop").hide().css({"visibility": "hidden"});
         showId.play();
+
+
+        clearTimeout(setTime);
+        $(".proPop_con").removeClass("fadeInUp animated");
+        $(".proPop").fadeOut().html("");
+
         e.preventDefault();
     })
-
-    // $(".addlistlink").on("click", function(e){
-    //     var ctVal = $(this).text();
-    //     if(wishArr.indexOf(ctVal) < 0){
-    //         wishArr.push($(this).text());
-    //     }
-    //     $(".wishlist em").html(wishArr.length);
-        
-    //     $(".proInfoPop").hide().css({"visibility": "hidden"});
-    //     showId.play();
-    //     e.preventDefault();
-    // })
 
 
 
@@ -329,9 +323,9 @@
         if(wishArr.length > 0 && ischange){
             pfun.ajaxFun("POST", "/api/mark", {"mark": (wishArr.join(','))}, "json", markCallback);
         }
-        var wishArr_copy = wishArr;
-        var prolistArr = arrPos(wishArr_copy);
-        console.log(prolistArr);
+        
+        var prolistArr = arrPos(wishArr);
+        // console.log(prolistArr);
 
         var prolistHTML = $.map(prolistArr, function(v, k){
             // console.log(v + ":" + k);
@@ -378,8 +372,8 @@
     function arrPos(a){
         var b = a;
         for(var i = 1; i <= 5; i++){
-            if(a.indexOf(i+"") < 0){
-                b.push(i+"");
+            if(a.indexOf(i) < 0){
+                b.push(i);
             }
         }
         return b;
@@ -411,7 +405,7 @@
         pfun.overscroll(document.querySelector("#chatArea")); 
         pfun.init();
 
-        if(wishcookie.length > 0){
+        if(wishcookie && wishcookie.length > 0){
             prolistFunCreate();
         }else{
             _v.sectionChange("guide");
@@ -428,7 +422,10 @@
     
 
     pfun.ajaxFun("POST", "/api/getmark", "", "json", function(data){
-        console.log(data);
+        //console.log(data);
+        $.map(data.msg, function(v, k){
+            console.log(v + ":" +k);
+        })
     });
 
 </script></body></html>
