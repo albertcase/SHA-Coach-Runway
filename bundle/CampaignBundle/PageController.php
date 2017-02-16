@@ -32,12 +32,11 @@ class PageController extends Controller {
 	public function getmarkAction() {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$marks = $DatabaseAPI->getMark();
-		var_dump($marks);exit;
 		$list = array("1"=>0, "2"=>0, "3"=>0, "4"=>0, "5"=>0);
 		foreach ($marks as $key => $value) {
 			$list[$value['pid']] = $value['num'];
 		}
-		$this->statusPrint($list);
+		$this->dataPrint(array("status"=>1, "msg"=>$list));
 	}
 
 	public function sendAction() {

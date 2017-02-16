@@ -125,7 +125,7 @@ class DatabaseAPI {
 
 	public function getMark() {
 		$sql="SELECT count(id) AS num,pid FROM `mark` GROUP BY pid";
-		$res = $this->db->query($sql);
+		$res = $this->connect()->query($sql);
 		$data = array();
 		while($rows = $res->fetch_array(MYSQLI_ASSOC))
 		{
