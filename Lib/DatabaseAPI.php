@@ -123,6 +123,19 @@ class DatabaseAPI {
 			return FALSE;
 	}
 
+	public function getMark() {
+		$sql="SELECT count(id) AS num,pid FROM `mark` GROUP BY pid";
+		$res = $this->db->query($sql);
+		$data = array();
+		while($rows = $res->fetch_array(MYSQLI_ASSOC))
+		{
+			$data[] = $rows;
+		}		
+		return $data;
+	}
+
+
+
 	/**
 	 * Create user in database
 	 */
