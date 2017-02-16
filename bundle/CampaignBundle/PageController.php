@@ -30,10 +30,8 @@ class PageController extends Controller {
 	}
 
 	public function getmarkAction() {
-		ini_set("display_errors", 1);
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$marks = $DatabaseAPI->getMark();
-		var_dump($marks);exit;
 		$list = array("1"=>0, "2"=>0, "3"=>0, "4"=>0, "5"=>0);
 		foreach ($marks as $key => $value) {
 			$list[$value['pid']] = $value['num'];
