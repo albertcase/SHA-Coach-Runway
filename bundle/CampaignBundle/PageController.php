@@ -14,14 +14,18 @@ class PageController extends Controller {
 		$this->statusPrint('success');
 	}
 
-	public function likeAction() {
+	public function markAction() {
 		$request = $this->request;
     	$fields = array(
-			'id' => array('notnull', '120')
+			'mark' => array('notnull', '120')
 		);
 		$request->validation($fields);
-		$id = $request->request->get('id');
+		$mark = $request->request->get('mark');
+		$marks = explode(",", $mark);
 		$DatabaseAPI = new \Lib\DatabaseAPI();
-
+		for ($i = 0; $i <= count($marks); $i++ ) {
+			$DatabaseAPI->saveMark($marks[$i]);
+		}
+		$this->statusPrint('success');
 	}
 }
