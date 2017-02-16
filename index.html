@@ -17,7 +17,14 @@
     var showId = document.getElementById("show"), timeArr = [], wishArr = !wishcookie ? [] : (wishcookie.split(',')),
         porinfoArr = {
             "price": ["RMB4,950", "RMB4,950", "RMB4,950", "RMB3,950", "RMB3,950"],
-            "num": ["123", "356", "789", "908", "367"]
+            "num": ["123", "356", "789", "908", "367"],
+            "link": [
+                "http://china.coach.com/product/21052_BPF8Q/detail.htm?collection=buynow",
+                "http://china.coach.com/product/21053_BPBLK/detail.htm?collection=buynow",
+                "http://china.coach.com/product/21050_BPCHK/detail.htm?collection=buynow",
+                "http://china.coach.com/product/21051_BPMIW/detail.htm?collection=buynow",
+                "http://china.coach.com/product/21051_BPVIO/detail.htm?collection=buynow"
+            ]
         };
 
     pfun.loadingFnDoing(allimg, function(){
@@ -145,25 +152,25 @@
     pfun.eventTester(showId, "timeupdate", function(e){
         console.log(showId.currentTime);
         if(timeArr.indexOf(parseInt(showId.currentTime)) < 0){
-            if(parseInt(showId.currentTime) == 6){
+            if(parseInt(showId.currentTime) == 30){
                 timeArr.push(parseInt(showId.currentTime));
-                propopFun(1);
+                propopFun(5);
                 //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 17){
-                timeArr.push(parseInt(showId.currentTime));
-                propopFun(2);
-                //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 30){
-                timeArr.push(parseInt(showId.currentTime));
-                propopFun(3);
-                //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 40){
+            }else if(parseInt(showId.currentTime) == 13){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(4);
                 //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 50){
+            }else if(parseInt(showId.currentTime) == 105){
                 timeArr.push(parseInt(showId.currentTime));
-                propopFun(5);
+                propopFun(3);
+                //console.log(timeArr);
+            }else if(parseInt(showId.currentTime) == 83){
+                timeArr.push(parseInt(showId.currentTime));
+                propopFun(1);
+                //console.log(timeArr);
+            }else if(parseInt(showId.currentTime) == 136){
+                timeArr.push(parseInt(showId.currentTime));
+                propopFun(2);
                 //console.log(timeArr);
             }else {
 
@@ -298,7 +305,7 @@
                             '<p>收藏人数: '+ porinfoArr.num[k] +'</p>' +
                             '<p class="price">'+ porinfoArr.price[k] +'</p>' +
                             '<div class="phabtnArea">' +
-                                '<a href="javascript:void(0)" class="addCart">' +
+                                '<a href="'+ porinfoArr.link[k] +'" class="addCart">' +
                                     '<img src="/build/assets/img/addCart.jpg" width="100%">' +
                                 '</a>' +
                                 '<a href="/" class="replay">' +
