@@ -30,6 +30,7 @@ class PageController extends Controller {
 	}
 
 	public function getmarkAction() {
+		ini_set("display_errors", 1);
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$marks = $DatabaseAPI->getMark();
 		var_dump($marks);exit;
