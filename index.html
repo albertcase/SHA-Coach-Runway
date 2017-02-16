@@ -152,21 +152,21 @@
     pfun.eventTester(showId, "timeupdate", function(e){
         console.log(showId.currentTime);
         if(timeArr.indexOf(parseInt(showId.currentTime)) < 0){
-            if(parseInt(showId.currentTime) == 30){
-                timeArr.push(parseInt(showId.currentTime));
-                propopFun(5);
-                //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 13){
+            if(parseInt(showId.currentTime) == 13){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(4);
                 //console.log(timeArr);
-            }else if(parseInt(showId.currentTime) == 105){
+            }else if(parseInt(showId.currentTime) == 30){
                 timeArr.push(parseInt(showId.currentTime));
-                propopFun(3);
+                propopFun(5);
                 //console.log(timeArr);
             }else if(parseInt(showId.currentTime) == 83){
                 timeArr.push(parseInt(showId.currentTime));
                 propopFun(1);
+                //console.log(timeArr);
+            }else if(parseInt(showId.currentTime) == 105){
+                timeArr.push(parseInt(showId.currentTime));
+                propopFun(3);
                 //console.log(timeArr);
             }else if(parseInt(showId.currentTime) == 136){
                 timeArr.push(parseInt(showId.currentTime));
