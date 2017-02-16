@@ -12,3 +12,4 @@ $routers['/teasing'] = array('CampaignBundle\Page', 'teasing');
 $routers['/clear'] = array('CampaignBundle\Page', 'clearCookie');
 $routers['/api/mark'] = array('CampaignBundle\Page', 'mark');
 $routers['/api/getmark'] = array('CampaignBundle\Page', 'getmark');
+$routers['/api/send'] = array('CampaignBundle\Page', 'send');
