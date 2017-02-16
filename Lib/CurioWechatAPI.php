@@ -47,7 +47,6 @@ class CurioWechatAPI {
 	    $arr['data']['keyword2']['color'] = '#FFFFFF';
 	    $arr['data']['remark']['value'] = '请您尽快入场，耐心等候';
 	    $arr['data']['remark']['color'] = '#FFFFFF';
-	    $arr = json_encode(urldecode($arr));
 
 	    $api_url = "http://coach.samesamechina.com/v2/wx/template/send?access_token=" . TOKEN;
 	    $ch = curl_init();
@@ -56,7 +55,7 @@ class CurioWechatAPI {
 	    //curl_setopt($ch, CURLOPT_POST, 1);
 	    curl_setopt ($ch, CURLOPT_HEADER, 0);
 	    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-	    //curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+	    curl_setopt ($ch, CURLOPT_POSTFIELDS, json_encode($arr));
 	    $info = curl_exec($ch);
 	    curl_close($ch);
 	    $rs = json_decode($info, true);
