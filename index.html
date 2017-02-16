@@ -242,6 +242,10 @@
 
         $(".proInfoPop_con").html(pinfoHTML);        
         $(".proInfoPop").show().css({"visibility": "visible"});
+
+        clearTimeout(setTime);
+        $(".proPop_con").removeClass("fadeInUp animated");
+        $(".proPop").fadeOut().html("");
     }
 
 
@@ -262,11 +266,6 @@
         
         $(".proInfoPop").hide().css({"visibility": "hidden"});
         showId.play();
-
-
-        clearTimeout(setTime);
-        $(".proPop_con").removeClass("fadeInUp animated");
-        $(".proPop").fadeOut().html("");
 
         e.preventDefault();
     })
@@ -325,7 +324,7 @@
         }
 
         var prolistArr = arrPos(wishArr);
-        // console.log(prolistArr);
+        console.log(prolistArr);
 
         var prolistHTML = $.map(prolistArr, function(v, k){
             // console.log(v + ":" + k);
@@ -370,10 +369,11 @@
 
     // arr pos change
     function arrPos(a){
-        var b = a;
+        var b = [].concat(a);
+        // console.log(b);
         for(var i = 1; i <= 5; i++){
-            if(a.indexOf(i) < 0){
-                b.push(i);
+            if(a.indexOf(i+"") < 0){
+                b.push(i+"");
             }
         }
         return b;
