@@ -706,7 +706,8 @@ input[name=send] {
 
 .proPop {
   width: 100%;
-  height: 100%;
+  padding: 10% 0 7% 0;
+  /*height: 100%;*/
   position: absolute;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
@@ -729,6 +730,7 @@ input[name=send] {
 
 .proPop_con {
   height: 95%;
+  padding: 0 0 9% 0;
   display: inline-block; }
 
 .mlink {
@@ -745,6 +747,11 @@ input[name=send] {
   top: 0;
   z-index: 9;
   visibility: hidden; }
+
+.proInfoPop_con {
+  width: 100%;
+  height: 100%;
+  position: relative; }
 
 .pclose {
   width: 8%;
@@ -914,6 +921,16 @@ input[name=send] {
     animation-timing-function: ease-in;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;*/ }
+
+#chatArea * {
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
 
 /* 6plus */
 /* 6 */
