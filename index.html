@@ -320,11 +320,12 @@
         // 提交心愿单结果
         var ischange = (historyWish != wishArr.join(','));
         if(wishArr.length > 0 && ischange){
-            // pfun.ajaxFun("POST", "/api/mark", {"mark": (wishArr.join(','))}, "json", markCallback);
+            pfun.ajaxFun("POST", "/api/mark", {"mark": (wishArr.join(','))}, "json", markCallback);
         }
 
         var prolistArr = arrPos(wishArr);
         console.log(prolistArr);
+        console.log(porinfoArr);
 
         var prolistHTML = $.map(prolistArr, function(v, k){
             // console.log(v + ":" + k);
@@ -423,8 +424,9 @@
 
     pfun.ajaxFun("POST", "/api/getmark", "", "json", function(data){
         //console.log(data);
-        $.map(data.msg, function(v, k){
-            console.log(v + ":" +k);
+        $.map(data.msg, function(o, l){
+            //console.log(v + ":" +k);
+            porinfoArr.num[l] = o;
         })
     });
 
