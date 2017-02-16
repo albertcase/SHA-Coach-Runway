@@ -150,7 +150,7 @@
     
 
     pfun.eventTester(showId, "timeupdate", function(e){
-        console.log(showId.currentTime);
+        //console.log(showId.currentTime);
         if(timeArr.indexOf(parseInt(showId.currentTime)) < 0){
             if(parseInt(showId.currentTime) == 13){
                 timeArr.push(parseInt(showId.currentTime));
@@ -176,7 +176,7 @@
 
             }
         }
-        // console.log(parseInt(showId.currentTime))   
+        console.log(parseInt(showId.currentTime))   
     });
 
     $(".poster").on("touchstart", function(){
