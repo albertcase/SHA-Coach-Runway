@@ -329,8 +329,8 @@
         if(wishArr.length > 0 && ischange){
             pfun.ajaxFun("POST", "/api/mark", {"mark": (wishArr.join(','))}, "json", markCallback);
         }
-        
-        var prolistArr = arrPos(wishArr);
+        var wishArr_copy = wishArr;
+        var prolistArr = arrPos(wishArr_copy);
         console.log(prolistArr);
 
         var prolistHTML = $.map(prolistArr, function(v, k){
