@@ -488,7 +488,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   background-size: 100% auto; }
 
 #guide {
-  background: url("../img/guide.jpg?v=5203e4cd85") center no-repeat;
+  background: url("../img/guide.jpg?v=6c32178064") center no-repeat;
   background-size: auto 100%; }
 
 .guideCon {
@@ -706,27 +706,14 @@ input[name=send] {
 
 .proPop {
   width: 100%;
-  padding: 10% 0 7% 0;
-  /*height: 100%;*/
+  height: 100%;
   position: absolute;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
   z-index: 6;
-  left: 100%;
+  left: 0;
   opacity: 0;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center; }
+  visibility: hidden; }
 
 .proPop_con {
   height: 95%;
@@ -768,7 +755,7 @@ input[name=send] {
   z-index: 6; }
 
 #list {
-  background: #f4efeb; }
+  background: #fff; }
 
 .swiper-container {
   width: 100%;
@@ -803,7 +790,7 @@ input[name=send] {
   z-index: 2; }
 
 .price {
-  padding: 0 0 9px 0;
+  padding: 0 0 12px 0;
   width: 100%;
   display: inline-block;
   color: #e6727f; }
@@ -833,8 +820,9 @@ input[name=send] {
   height: 9%;
   background: rgba(27, 67, 67, 0.6);
   position: absolute;
-  left: 20%;
-  bottom: 10%;
+  left: 50%;
+  bottom: 5%;
+  margin: 0 0 0 -30%;
   z-index: 2;
   color: #fff; }
 

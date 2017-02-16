@@ -18,7 +18,7 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="...">
     <link rel="stylesheet" type="text/css" href="/build/assets/css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="/build/assets/css/main.min.css?v=884fb2354c">
+    <link rel="stylesheet" type="text/css" href="/build/assets/css/main.min.css?v=5ce3bad5e4">
     <style type="text/css">
         #orientLayer { display: block; }
         @media screen and (min-aspect-ratio: 13/9) { 
@@ -65,11 +65,11 @@
     </div>
 
     <div class="section" id="stage">
-
+    <a href="javascript:;" class="pass" style="position: absolute; left: 0; top:0; font-size:1.6rem; color: #f60; z-index: 9; text-align: center; padding: 6px 0; width: 70%;">跳过</a>
         <dl>
             <dd>
                 <div class="poster"></div>
-                <video width="100%" height="100%" id="show" x-webkit-airplay="true" preload playsinline webkit-playsinline src="http://nyfwfall2017video.samesamechina.com/build/assets/video/b.mp4"></video>
+                <video width="100%" height="100%" id="show" x-webkit-airplay="true" preload playsinline webkit-playsinline src="http://nyfwfall2017video.samesamechina.com/build/assets/video/c.mp4"></video>
 
                 <!-- <a class="alink" href="javascript:void(0);">
                     <img src="/build/assets/img/add.png?v=7584e93861" width="100%">
@@ -90,7 +90,7 @@
 
                 <div class="proInfoPop">
                     <a href="javascript:void(0)" class="pclose">
-                        <img src="/build/assets/img/close.png?v=f144c02597" width="100%">
+                        <img src="/build/assets/img/close.png?v=c54df98b60" width="100%">
                     </a>
                     <div class="proInfoPop_con">
                         <!-- <img src="/build/assets/img/pro/1/pb.jpg?v=13d79c54cf" height="100%">
@@ -145,7 +145,7 @@
 
 
     <div class="section" id="list">
-        <img src="/build/assets/img/list-header.jpg?v=8719a7c927" width="100%">
+        <img src="/build/assets/img/list-header.jpg?v=896b95c100" width="100%">
 
         <div class="listCon">
 
@@ -153,17 +153,17 @@
             <div class="swiper-container" id="swiper-3">
                 <div class="swiper-wrapper" id="prolistCon">
                     <!-- <div class="swiper-slide">
-                        <img src="/build/assets/img/pro/1/l.jpg?v=7442bf886b" width="100%">
+                        <img src="/build/assets/img/pro/1/l.jpg?v=480adb7d29" width="100%">
 
                         <div class="proHotArea">
                             <p>收藏人数: 520</p>
                             <p class="price">RMB8,500</p>
                             <div class="phabtnArea">
                                 <a href="javascript:void(0)" class="addCart">
-                                    <img src="/build/assets/img/addCart.png?v=d5609a2549" width="100%">
+                                    <img src="/build/assets/img/addCart.png" width="100%">
                                 </a>
                                 <a href="/" class="replay">
-                                    <img src="/build/assets/img/replay.png?v=90865c27b2" width="100%">
+                                    <img src="/build/assets/img/replay.png" width="100%">
                                 </a>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
 <script type="text/javascript">
     var allimg = [
         "/build/assets/img/logo.png?v=b7ab1cb4bc",
-        "/build/assets/img/guide.jpg?v=5203e4cd85",
+        "/build/assets/img/guide.jpg?v=6c32178064",
 
         "/build/assets/img/blue.png?v=ccc1743280",
         "/build/assets/img/orange.png?v=1ce3e82ca1",
@@ -195,7 +195,11 @@
         "/build/assets/img/pink.png?v=dbb3cb8037",
     ];
     var wishcookie = pfun.getCookie("wish");
-    var showId = document.getElementById("show"), timeArr = [], wishArr = !wishcookie ? [] : (wishcookie.split(','));
+    var showId = document.getElementById("show"), timeArr = [], wishArr = !wishcookie ? [] : (wishcookie.split(',')),
+        porinfoArr = {
+            "price": ["RMB4,950", "RMB4,950", "RMB4,950", "RMB3,950", "RMB3,950"],
+            "num": ["123", "356", "789", "908", "367"]
+        };
 
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
@@ -291,18 +295,19 @@
     }
 
     // 产品弹出
+
+    // '<a href="javascript:void(0);" class="mlink">' +
+    //                         '<img src="/build/assets/img/mlink.png?v=6c443e913d" width="100%">' +
+    //                     '</a>' +
     function propopFun(n){
         var popHTML = '<div class="proPop_con" data-id="'+ n +'">' +
-                        '<img src="/build/assets/img/pro/'+ n +'/pw.png" width="100%">' +
-                        '<a href="javascript:void(0);" class="mlink">' +
-                            '<img src="/build/assets/img/mlink.png?v=6c443e913d" width="100%">' +
-                        '</a>' +
+                        '<img src="/build/assets/img/pro/'+ n +'/pw.jpg" width="100%">' +
                     '</div>';
-        $(".proPop").html(popHTML).stop().animate({"left": 0, "opacity": 1}, 200);
+        $(".proPop").html(popHTML).css({"visibility": "visible"}).stop().animate({"opacity": 1}, 600);
         
 
         setTimeout(function(){
-            $(".proPop").stop().animate({"left": "100%", "opacity": 0}, 100).html("");
+            $(".proPop").stop().animate({"opacity": 0}, 100).html("").css({"visibility": "hidden"});
         }, 5700)
 
     }
@@ -456,8 +461,7 @@
 
 
     // 视频播放结束监测
-
-    pfun.eventTester(showId, "ended", function(e){
+    function prolistFunCreate(){
         clearInterval(chatset);
 
         _v.sectionChange("list");
@@ -470,16 +474,16 @@
         var prolistHTML = $.map(prolistArr, function(v, k){
             // console.log(v + ":" + k);
             return '<div class="swiper-slide">' +
-                        '<img src="/build/assets/img/pro/1/l.jpg?v=7442bf886b" width="100%">' +
+                        '<img src="/build/assets/img/pro/1/l.jpg?v=480adb7d29" width="100%">' +
                         '<div class="proHotArea">' +
-                            '<p>收藏人数: '+ v +'</p>' +
-                            '<p class="price">RMB8,500</p>' +
+                            '<p>收藏人数: '+ porinfoArr.num[k] +'</p>' +
+                            '<p class="price">'+ porinfoArr.price[k] +'</p>' +
                             '<div class="phabtnArea">' +
                                 '<a href="javascript:void(0)" class="addCart">' +
-                                    '<img src="/build/assets/img/addCart.png?v=d5609a2549" width="100%">' +
+                                    '<img src="/build/assets/img/addCart.jpg?v=171f2f597e" width="100%">' +
                                 '</a>' +
                                 '<a href="/" class="replay">' +
-                                    '<img src="/build/assets/img/replay.png?v=90865c27b2" width="100%">' +
+                                    '<img src="/build/assets/img/replay.jpg?v=3cbc21748f" width="100%">' +
                                 '</a>' +
                             '</div>' +
                         '</div>' +
@@ -494,7 +498,14 @@
             prevButton: '#swiper-3 .swiper-button-prev',
             spaceBetween: 30
         });
+    }
+    pfun.eventTester(showId, "ended", function(e){
+        prolistFunCreate();
+    })
 
+    $(".pass").on("click", function(){
+        prolistFunCreate();
+        showId.pause();
     })
 
 
