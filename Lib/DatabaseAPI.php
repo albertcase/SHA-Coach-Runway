@@ -111,6 +111,19 @@ class DatabaseAPI {
 	}
 
 	/**
+	 * 
+	 */
+	public function saveMark($id){
+		$sql = "INSERT INTO `mark` SET `pid` = ?"; 
+		$res = $this->connect()->prepare($sql); 
+		$res->bind_param("s", $id);
+		if($res->execute()) 
+			return $res->insert_id;
+		else 
+			return FALSE;
+	}
+
+	/**
 	 * Create user in database
 	 */
 	public function findInfoByUid($uid){
