@@ -38,15 +38,15 @@ class CurioWechatAPI {
 	    $arr['touser'] = $openid;
 	    $arr['template_id'] = 'WndD3kOmw-_OvtTPg0yfs0qziEWoHirCnsyXF8IiPns';
 	    $arr['url'] = '';
-	    $arr['topcolor'] = '#FFFFFF';
+	    $arr['topcolor'] = '#000000';
 	    $arr['data']['first']['value'] = 'COACH 2017秋季即看即买大秀即将开始';
-	    $arr['data']['first']['color'] = '#FFFFFF';
+	    $arr['data']['first']['color'] = '#000000';
 	    $arr['data']['keyword1']['value'] = '尊贵嘉宾';
-	    $arr['data']['keyword1']['color'] = '#FFFFFF';
+	    $arr['data']['keyword1']['color'] = '#000000';
 	    $arr['data']['keyword2']['value'] = '2017-02-19';
-	    $arr['data']['keyword2']['color'] = '#FFFFFF';
+	    $arr['data']['keyword2']['color'] = '#000000';
 	    $arr['data']['remark']['value'] = '请您尽快入场，耐心等候';
-	    $arr['data']['remark']['color'] = '#FFFFFF';
+	    $arr['data']['remark']['color'] = '#000000';
 
 	    $api_url = "http://coach.samesamechina.com/v2/wx/template/send?access_token=" . TOKEN;
 	    $ch = curl_init();
