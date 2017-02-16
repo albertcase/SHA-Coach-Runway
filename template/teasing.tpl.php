@@ -17,14 +17,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="Keywords" content="">
     <meta name="Description" content="...">
-    <link rel="stylesheet" type="text/css" href="/build/assets/css/main.min.css?v=aad245b242">
+    <link rel="stylesheet" type="text/css" href="/build/assets/css/main.min.css">
     <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/75058010-0fe1-476a-88f8-f96ffab561c8/wechat"></script>
 
 </head>
 <body>
 <div class="loading">
     <div class="loading_con">
-        <img src="/build/assets/img/logo.png?v=b7ab1cb4bc" width="100%">
+        <img src="/build/assets/img/logo.png" width="100%">
 
         <div class="spinner">
             <div class="bounce1"></div>
@@ -46,17 +46,17 @@
 <div id="dreambox">
 
     <div class="section show transition" id="commingsoon">
-        <img src="" sourcesrc="/build/assets/img/commingsoon.png?v=a6c509f755" width="100%" class="logo">
+        <img src="" sourcesrc="/build/assets/img/commingsoon.png" width="100%" class="logo">
     </div>
 
 </div>
 
-<script type="text/javascript" src="/build/assets/js/main.min.js?v=a2d3cd3d8e"></script>
+<script type="text/javascript" src="/build/assets/js/main.min.js"></script>
 <script type="text/javascript">
     var allimg = [
-        "/build/assets/img/logo.png?v=b7ab1cb4bc",
-        "/build/assets/img/bg.jpg?v=6396e8f1d2",
-        "/build/assets/img/commingsoon.png?v=a6c509f755",
+        "/build/assets/img/logo.png",
+        "/build/assets/img/bg.jpg",
+        "/build/assets/img/commingsoon.png",
     ];
 
     pfun.loadingFnDoing(allimg, function(){
