@@ -321,9 +321,9 @@
         // 提交心愿单结果
         var ischange = (historyWish != wishArr.join(','));
         if(wishArr.length > 0 && ischange){
-            pfun.ajaxFun("POST", "/api/mark", {"mark": (wishArr.join(','))}, "json", markCallback);
+            // pfun.ajaxFun("POST", "/api/mark", {"mark": (wishArr.join(','))}, "json", markCallback);
         }
-        
+
         var prolistArr = arrPos(wishArr);
         // console.log(prolistArr);
 
