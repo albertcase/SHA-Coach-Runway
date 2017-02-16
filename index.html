@@ -160,7 +160,7 @@
                         '<img src="/build/assets/img/pro/'+ n +'/pw.jpg" width="100%">' +
                     '</div>';
         $(".proPop").html(popHTML).fadeIn();
-        
+        showId.pause();
 
         setTime = setTimeout(function(){
             $(".proPop_con").removeClass("fadeInUp animated");
@@ -169,10 +169,8 @@
 
     }
 
-    $(".proPop").delegate(".proPop_con", "click", function(){
+    $(".proPop").delegate(".proPop_con img", "click", function(){
         var currentNum = $(this).attr("data-id");
-        //console.log(currentNum);
-        //swiper2.slideTo(currentNum, 1000, false);
         proInfoPopFun(currentNum);
         showId.pause();
     })
