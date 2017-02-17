@@ -4,28 +4,6 @@
             #orientLayer { display: none; } 
         }
 
-        /* 6plus */
-
-        @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
-        }
-
-        /* 6 */
-        @media only screen and (min-device-width: 375px) and (max-device-width: 410px) and (orientation: portrait) {
-        }
-
-        /* 5s */
-        @media handheld and (min-device-height:490px),screen and (max-device-height:510px) and (orientation: portrait)  {
-        }
-
-        /* 4s */
-
-        @media handheld and (min-device-width:400px),screen and (max-device-width:420px) and (orientation: portrait)  {
-            .msg ul{
-                max-height: 190px;
-                overflow: auto;
-            }
-        }
-
     </style><script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/75058010-0fe1-476a-88f8-f96ffab561c8/wechat"></script><script>
     var _hmt = _hmt || [];
     (function() {
@@ -446,6 +424,7 @@
     pfun.loadingFnDoing(allimg, function(){
         $(".loading").css({"visibility": "hidden"});
         pfun.overscroll(document.querySelector("#chatArea")); 
+
         pfun.init();
 
         if(wishcookie && wishcookie.length > 0){
