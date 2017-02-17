@@ -40,6 +40,7 @@ class PageController extends Controller {
 	}
 
 	public function sendAction() {
+		ini_set("display_errors", 1);
 		$ok=0;
 		$total = 0;
 		$curiowechatapi = new \Lib\CurioWechatAPI();
