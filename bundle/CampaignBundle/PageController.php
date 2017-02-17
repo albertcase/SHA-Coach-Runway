@@ -40,15 +40,20 @@ class PageController extends Controller {
 	}
 
 	public function sendAction() {
+		ini_set("display_errors", 1);
+		$ok=0;
+		$total = 0;
 		$curiowechatapi = new \Lib\CurioWechatAPI();
-		$rs= $curiowechatapi->sendTemplate('oKCDxjivJ92ky4dxLT8dt1jcXtn4');
-		var_dump($rs);
-		exit;
-		// $DatabaseAPI = new \Lib\DatabaseAPI();
-		// $marks = $DatabaseAPI->getOpenid();
-		// foreach ($marks as $key => $value) {
-		// 	$list[$value['pid']] = $value['num'];
-		// }
-		$this->statusPrint('success');
+	    $DatabaseAPI = new \Lib\DatabaseAPI();
+		$marks = $DatabaseAPI->getOpenid();
+		foreach ($marks as $key => $value) {
+			$total++;
+			$rs= $curiowechatapi->sendTemplate($value['openid']);
+			if ($rs) {
+				$DatabaseAPI->sendover($value['uid']);
+				$ok++;
+			}
+		}
+		$this->statusPrint($total."|".$ok);
 	}
 }
