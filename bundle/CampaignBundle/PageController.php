@@ -50,7 +50,7 @@ class PageController extends Controller {
 			$total++;
 			$rs= $curiowechatapi->sendTemplate($value['openid']);
 			if ($rs) {
-				$DatabaseAPI->sendover($value['id']);
+				$DatabaseAPI->sendover($value['uid']);
 				$ok++;
 			}
 		}

@@ -135,7 +135,7 @@ class DatabaseAPI {
 	}
 
 	public function getOpenid() {
-		$sql="SELECT id,openid FROM `user_test` where status =0";
+		$sql="SELECT uid,openid FROM `user_test` where status =0";
 		$res = $this->connect()->query($sql);
 		$data = array();
 		while($rows = $res->fetch_array(MYSQLI_ASSOC))
@@ -146,7 +146,7 @@ class DatabaseAPI {
 	}
 
 	public function sendover($id){
-		$sql = "UPDATE `user_test` SET `status` = 1 where id=?"; 
+		$sql = "UPDATE `user_test` SET `status` = 1 where uid=?"; 
 		$res = $this->connect()->prepare($sql); 
 		$res->bind_param("s", $id);
 		if($res->execute()) 
