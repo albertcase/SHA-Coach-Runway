@@ -156,8 +156,8 @@
     var setTime;
     function propopFun(n){
         clearTimeout(setTime);
-        var popHTML = '<div class="proPop_con fadeInUp animated" data-id="'+ n +'">' +
-                        '<img src="/build/assets/img/pro/'+ n +'/pw.jpg" width="100%">' +
+        var popHTML = '<div class="proPop_con fadeInUp animated">' +
+                        '<img src="/build/assets/img/pro/'+ n +'/pw.jpg" data-id="'+ n +'" width="100%">' +
                     '</div>';
         $(".proPop").html(popHTML).fadeIn();
 
