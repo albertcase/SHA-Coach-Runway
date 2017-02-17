@@ -37,7 +37,7 @@ class CurioWechatAPI {
 		$arr = array();
 	    $arr['touser'] = $openid;
 	    $arr['template_id'] = 'WndD3kOmw-_OvtTPg0yfs0qziEWoHirCnsyXF8IiPns';
-	    $arr['url'] = '';
+	    $arr['url'] = 'http://nyfwfall2017.samesamechina.com/';
 	    $arr['topcolor'] = '#000000';
 	    $arr['data']['first']['value'] = 'COACH 2017秋季即看即买大秀即将开始';
 	    $arr['data']['first']['color'] = '#000000';
