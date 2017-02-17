@@ -234,7 +234,7 @@
     
     // 产品详细弹出
     function proInfoPopFun(n){
-        var pinfoHTML = '<img src="/build/assets/img/pro/'+ n +'/pb.jpg" height="100%">' +
+        var pinfoHTML = '<img src="/build/assets/img/pro/'+ n +'/pb.jpg" width="100%" height="100%">' +
                         '<a href="javascript:void(0);" class="addlistlink">'+ n +'</a>';
 
         $(".proInfoPop_con").html(pinfoHTML);        
@@ -327,7 +327,7 @@
         var prolistHTML = $.map(prolistArr, function(v, k){
             // console.log(v + ":" + k);
             return '<div class="swiper-slide">' +
-                        '<img src="/build/assets/img/pro/1/l.jpg" width="100%">' +
+                        '<img src="/build/assets/img/pro/'+ v +'/l.jpg" width="100%">' +
                         '<div class="proHotArea">' +
                             '<p>收藏人数: '+ porinfoArr.num[v] +'</p>' +
                             '<p class="price">'+ porinfoArr.price[v] +'</p>' +
