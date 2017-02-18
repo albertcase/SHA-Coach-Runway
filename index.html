@@ -353,7 +353,7 @@
             return '<div class="swiper-slide">' +
                         '<img src="/build/assets/img/pro/'+ v +'/l.jpg" width="100%">' +
                         '<div class="proHotArea">' +
-                            '<p>收藏人数: '+ parseInt(porinfoArr.num[v]+10, 10) +'</p>' +
+                            '<p>收藏人数: '+ (parseInt(porinfoArr.num[v], 10) + 10) +'</p>' +
                             '<p class="price">'+ porinfoArr.price[v] +'</p>' +
                             '<div class="phabtnArea">' +
                                 '<a href="'+ porinfoArr.link[v] +'" target="_blank" class="addCart">' +
