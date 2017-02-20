@@ -886,6 +886,43 @@ input[name=send] {
   height: 67%;
   z-index: 2; }
 
+.soldout {
+  width: 100%;
+  height: 100%;
+  background: #000 url("../img/soldout.jpg") center no-repeat;
+  background-size: auto 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 12; }
+
+.soldout .con {
+  height: 80%;
+  position: absolute;
+  right: 5%;
+  top: 10%; }
+
+.soldout .con span {
+  width: 76%;
+  height: 25%;
+  position: absolute;
+  left: 12%;
+  bottom: 7%;
+  z-index: 2; }
+
+.soldout .con span a {
+  height: 50%;
+  width: 100%;
+  float: left;
+  display: inline-block; }
+
+/*.soldlink_1{
+  background: rgba(190,89,67, .6);
+}
+
+.soldlink_2{
+  background: rgba(20,189,67, .6);
+}*/
 /*****************************
  pop
 *****************************/
